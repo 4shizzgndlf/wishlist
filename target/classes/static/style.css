@@ -162,11 +162,11 @@ body {
 }
 
 /* =========================
-   FOOTER
+   FOOTER (MATCH NAVBAR)
 ========================= */
 .footer {
-    background: #111827;
-    color: #d1d5db;
+    background: #1e1e2f; /* SAME as navbar */
+    color: #ccc;
     padding: 3rem 1rem 1rem;
     margin-top: 50px;
 }
@@ -186,13 +186,13 @@ body {
 }
 
 .footer-logo {
-    color: #00d4ff;
+    color: #00d4ff; /* SAME accent */
     margin-bottom: 1rem;
 }
 
 .footer-section p {
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Links */
@@ -202,17 +202,17 @@ body {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
 }
 
 .footer-section a {
-    color: #d1d5db;
+    color: #ccc;
     text-decoration: none;
     transition: 0.2s;
 }
 
 .footer-section a:hover {
-    color: #00d4ff;
+    color: #00d4ff; /* SAME hover */
 }
 
 /* Social icons */
@@ -223,22 +223,23 @@ body {
 }
 
 .socials a {
-    text-decoration: none;
-    transition: transform 0.2s, color 0.2s;
+    color: #ccc;
+    transition: 0.3s;
 }
 
 .socials a:hover {
-    transform: scale(1.2);
     color: #00d4ff;
+    transform: translateY(-3px);
 }
 
 /* Bottom bar */
 .footer-bottom {
-    border-top: 1px solid #374151;
+    border-top: 1px solid #2c2c3f;
     margin-top: 2rem;
     padding-top: 1rem;
     text-align: center;
     font-size: 0.8rem;
+    color: #888;
 }
 
 /* =========================
