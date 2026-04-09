@@ -8,15 +8,19 @@
 </head>
 <body>
 <div th:replace="navbar :: navbar"></div>
-<h1>Item</h1>
-<div>
-    <div>Id: <span th:text="${item.id}"></span></div>
-    <div>Name: <span th:text="${item.name}"></span></div>
-    <div>Description: <span th:text="${item.description}"></span></div>
-    <div>Price: <span th:text="${item.price}"></span></div>
-    <div>Url: <span th:text="${item.url}"></span></div>
-    <div>Image Url: <span th:text="${item.image_url}"></span></div>
-    <div>Created at: <span th:text="${item.created_at}"></span></div>
+<div class="item-container">
+    <div><img th:src="${item.image_url}" alt="Product image" height="300"></div>
+    <div>
+        <h1><span th:text="${item.name}"></span></h1>
+        <div><h2><span th:text="${item.price}"></span>.00,-</h2></div>
+        <div><a th:href="${item.url}">Take Me To The Store!</a></div>
+    </div>
+</div>
+<div class="class-description">
+    <h3>Information</h3>
+</div>
+<div class="class-description">
+    <span th:text="${item.description}"></span>
 </div>
 <div th:replace="footer :: footer"></div>
 <script>

@@ -9,12 +9,12 @@
 </head>
 <body>
 <div th:replace="navbar :: navbar"></div>
-<h1>Products</h1>
+<h1 class="title">Products</h1>
 <div class="products-container">
     <div th:each="product : ${products}" class="box">
         <a th:href="@{/products/item(id=${product.id})}" class="products-name">
             <div th:text="${product.name}"></div>
-            <img th:src="${product.image_url}" alt="Product image" width="200">
+            <img th:src="${product.image_url}" alt="Product image" style="width:200px">
         </a>
     </div>
 </div>

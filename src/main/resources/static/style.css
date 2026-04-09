@@ -280,7 +280,7 @@ body {
      Design til Product
 ======================== */
 
-h1 {
+.title {
     text-align: center;
 }
 
@@ -306,10 +306,12 @@ h1 {
     color: black;
 }
 
-.box,
-img {
+.box img {
+    width: 220px;
+    height: 150px;
     border-radius: 10%;
-    overflow: hidden;
+    object-fit: cover;
+    display: block;
 }
 
 /* =========================
@@ -580,4 +582,26 @@ img {
     .wishlist-card form button {
         width: 100%;
     }
+}
+
+/*
+ITEM CSS
+ */
+
+.item-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5%;
+}
+
+.item-container img {
+    margin-top: 30px;
+}
+
+.class-description {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
