@@ -9,15 +9,14 @@
 </head>
 <body>
 <div th:replace="navbar :: navbar"></div>
-<h1>Products:</h1>
-<div th:each="product : ${products}">
-    <div>Id: <span th:text="${product.id}"></span></div>
-    <div>Name: <span th:text="${product.name}"></span></div>
-    <div>Description: <span th:text="${product.description}"></span></div>
-    <div>Price: <span th:text="${product.price}"></span></div>
-    <div>Url: <span th:text="${product.url}"></span></div>
-    <div>Image Url: <span th:text="${product.image_url}"></span></div>
-    <div>Created at: <span th:text="${product.created_at}"></span></div>
+<h1 class="title">Products</h1>
+<div class="products-container">
+    <div th:each="product : ${products}" class="box">
+        <a th:href="@{/products/item(id=${product.id})}" class="products-name">
+            <div th:text="${product.name}"></div>
+            <img th:src="${product.image_url}" alt="Product image">
+        </a>
+    </div>
 </div>
 <div th:replace="footer :: footer"></div>
 <script>

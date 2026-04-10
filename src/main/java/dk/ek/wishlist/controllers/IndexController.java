@@ -36,7 +36,7 @@ public class IndexController {
         return mav;
     }
 
-    @GetMapping("/item")
+    @GetMapping("/products/item")
     public ModelAndView product(@RequestParam int id) {
         ModelAndView mav = new ModelAndView("item");
         Product item = service.getProductMatch(id);
