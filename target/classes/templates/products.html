@@ -14,7 +14,7 @@
     <div th:each="product : ${products}" class="box">
         <a th:href="@{/products/item(id=${product.id})}" class="products-name">
             <div th:text="${product.name}"></div>
-            <img th:src="${product.image_url}" alt="Product image" style="width:200px">
+            <img th:src="${product.image_url}" alt="Product image">
         </a>
     </div>
 </div>
