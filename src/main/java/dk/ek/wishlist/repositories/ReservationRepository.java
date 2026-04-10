@@ -3,10 +3,7 @@ package dk.ek.wishlist.repositories;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 @Repository
 public class ReservationRepository {
@@ -26,5 +23,25 @@ public class ReservationRepository {
             stmt.setLong(2, userId);
             stmt.executeUpdate();
         } catch (SQLException e) { e.printStackTrace(); }
+    }
+
+    public boolean isReserved(long wishlistItemId) {
+        String sql = "SELECT COUNT(*) FROM reservations WHERE wishlist_item_id = ?";
+
+        try (Connection conn = DriverManager.getConnection(dbUrl, username, password);
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setLong(1, wishlistItemId);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 }

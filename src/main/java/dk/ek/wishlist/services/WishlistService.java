@@ -37,7 +37,14 @@ public class WishlistService {
     }
 
     public List<WishlistItem> getItems(long wishlistId) {
-        return itemRepo.findByWishlist(wishlistId);
+        List<WishlistItem> items = itemRepo.findByWishlist(wishlistId);
+
+        for (WishlistItem item : items) {
+            boolean reserved = reservationRepo.isReserved(item.getId());
+            item.setReserved(reserved);
+        }
+
+        return items;
     }
 
     public void reserve(long itemId, long userId) {

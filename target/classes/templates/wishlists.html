@@ -15,7 +15,7 @@
     <section class="section create-wishlist">
         <h2>Create a Wishlist</h2>
         <form method="post" action="/wishlists/create">
-            <input name="name" placeholder="Wishlist Name" required />
+            <input name="name" placeholder="Wishlist Name" required/>
             <textarea name="description" placeholder="Description"></textarea>
             <button type="submit"><i class="fa fa-plus"></i> Create Wishlist</button>
         </form>
@@ -33,11 +33,22 @@
                 <div th:if="${w.items != null}">
                     <h4>Items:</h4>
                     <ul>
-                        <li th:each="item : ${w.items}">
-                            Product ID: <span th:text="${item.productId}"></span> Quantity: <span th:text="${item.quantity}"></span>
+                        <li th:each="item : ${w.items}"
+                            th:classappend="${item.reserved} ? 'reserved-item'">
+
+                            Product ID: <span th:text="${item.productId}"></span>
+                            Quantity: <span th:text="${item.quantity}"></span>
+
                             <form method="post" th:action="@{/reserve}" style="display:inline">
-                                <input type="hidden" name="itemId" th:value="${item.id}" />
-                                <button type="submit"><i class="fa fa-gift"></i> Reserve</button>
+                                <input type="hidden" name="itemId" th:value="${item.id}"/>
+
+                                <button type="submit"
+                                        th:disabled="${item.reserved}"
+                                        th:classappend="${item.reserved} ? 'reserved-btn'">
+
+                                    <i class="fa fa-gift"></i>
+                                    <span th:text="${item.reserved} ? 'Reserved' : 'Reserve'"></span>
+                                </button>
                             </form>
                         </li>
                     </ul>
@@ -45,7 +56,7 @@
 
                 <!-- ADD PRODUCT TO WISHLIST -->
                 <form method="post" action="/wishlist/add">
-                    <input type="hidden" name="wishlistId" th:value="${w.id}" />
+                    <input type="hidden" name="wishlistId" th:value="${w.id}"/>
                     <select name="productId">
                         <option th:each="p : ${products}" th:value="${p.id}" th:text="${p.name}"></option>
                     </select>

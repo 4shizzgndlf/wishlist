@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<form method="post" action="/register">
+<div th:replace="navbar :: navbar"></div>
+<form class="loginForm" method="post" action="/register">
     <input type="text" name="username" placeholder="Username" required />
     <input type="email" name="email" placeholder="Email" required />
     <input type="password" name="password" placeholder="Password" required />
     <button type="submit">Register</button>
 </form>
+<div th:replace="footer :: footer"></div>
 </body>
 </html>
