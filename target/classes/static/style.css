@@ -591,6 +591,7 @@ body {
     }
 }
 
+<<<<<<< HEAD
 /* RESERVED ITEM */
 .reserved-item {
     background: #f1f1f1;
@@ -637,5 +638,5 @@ ITEM CSS
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}
+>>>>>>> c4a388d0a6c48da320d77904e666a8120d7d78f1
 }
