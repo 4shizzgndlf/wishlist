@@ -616,34 +616,28 @@ body {
 
 .loginForm input {
     margin-bottom: 20px;
-
- /*
-ITEM CSS
- */
-
-. item-container {
 }
 
 /* ITEM CSS */
+
 .item-container {
     display: flex;
     align-items: center;
-    padding-left: 1000px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5%;
 }
 
-    .item-container img {
-        margin-top: 30px;
-    }
-
-    .class-description {
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-    }
+.item-container img {
+    margin-top: 30px;
 }
+
+.class-description {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .class-description {
     display: flex;
     justify-content: center;
