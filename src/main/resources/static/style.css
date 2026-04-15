@@ -643,3 +643,21 @@ body {
     justify-content: center;
     align-items: flex-end;
 }
+
+.createProductBtn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.create-btn {
+    background-color: #00d4ff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.create-btn:hover {
+    background-color: #00aacc;
+}
